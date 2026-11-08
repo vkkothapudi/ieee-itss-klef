@@ -4,304 +4,286 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>IEEE ITSS KLEF</title>
-
 <meta name="description" content="IEEE Intelligent Transportation Systems Society Student Branch Chapter at Koneru Lakshmaiah Education Foundation (KLEF), Vaddeswaram, Andhra Pradesh.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Open+Sans+Condensed:wght@700&display=swap">
 <style>
-/* Layout: a road. Full-width bands separated by dashed lane markings; content sits in a centred carriageway. */
+/* Layout: chapter-portfolio page. Header, navy menu bar, light-streak banner, then a sidebar ("On this page") beside the main column. */
 :root{
-  --bg:#F3F5F7; --surface:#FFFFFF; --ink:#14212E; --muted:#5A6878;
-  --line:#D5DCE3; --road:#0E3A66; --road-ink:#EAF1F8; --signal:#E8A317; --signal-ink:#3D2A00;
-  --display:"Saira Condensed","Arial Narrow",Arial,sans-serif;
-  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
-  --wrap:1080px;
+  --bg:#FFFFFF; --panel:#F3F3F3; --ink:#1E2328; --muted:#5B6570; --line:#DADFE4;
+  --navy:#002855; --blue:#00629B; --nav:#00467F; --red:#BA0C2F; --link:#00629B; --on-dark:#FFFFFF; --head:#002855;
+  --sans:"Open Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --cond:"Open Sans Condensed","Arial Narrow",Arial,sans-serif;
+  --wrap:1180px;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0E151C; --surface:#16202A; --ink:#E6ECF2; --muted:#9AA8B6;
-  --line:#2A3846; --road:#0A2742; --road-ink:#E6EEF6; --signal:#F2B33A; --signal-ink:#2A1C00; color-scheme:dark}}
+  --bg:#0F151B; --panel:#18212A; --ink:#E5EAEF; --muted:#9AA6B2; --line:#2B3744;
+  --navy:#0B2A4C; --blue:#4FA3D9; --nav:#0D3C66; --red:#E0405F; --link:#6CB8E8; --head:#CFE3F5; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#0E151C; --surface:#16202A; --ink:#E6ECF2; --muted:#9AA8B6;
-  --line:#2A3846; --road:#0A2742; --road-ink:#E6EEF6; --signal:#F2B33A; --signal-ink:#2A1C00; color-scheme:dark}
+  --bg:#0F151B; --panel:#18212A; --ink:#E5EAEF; --muted:#9AA6B2; --line:#2B3744;
+  --navy:#0B2A4C; --blue:#4FA3D9; --nav:#0D3C66; --red:#E0405F; --link:#6CB8E8; --head:#CFE3F5; color-scheme:dark}
 
 *{box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font:16px/1.6 var(--body)}
-a{color:inherit}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--ink);font:17px/1.7 var(--sans)}
+a{color:var(--link)}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px}
 .band{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 .wrap{max-width:var(--wrap);margin:0 auto}
-h1,h2,h3{font-family:var(--display);line-height:1.05;text-wrap:balance;margin:0}
-h2{font-size:clamp(2rem,4.5vw,2.8rem);font-weight:800;text-transform:uppercase;letter-spacing:.01em}
-h3{font-size:1.35rem;font-weight:700}
+h1,h2,h3{text-wrap:balance;margin:0}
 p{margin:0}
-.eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.lane{height:6px;background:repeating-linear-gradient(90deg,var(--signal) 0 46px,transparent 46px 78px)}
-:focus-visible{outline:3px solid var(--signal);outline-offset:3px}
 
-/* header */
-header{background:var(--road);color:var(--road-ink);position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--road)}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px;flex-wrap:wrap}
-.brand{font-family:var(--display);font-weight:800;font-size:1.25rem;letter-spacing:.02em;text-decoration:none}
-.brand span{color:var(--signal)}
-.nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
-.nav a{text-decoration:none;font-size:.92rem;opacity:.85}
-.nav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
+.strip{background:#000;color:#fff;font-size:.85rem}
+.strip .wrap{display:flex;justify-content:space-between;gap:16px;padding-block:6px;flex-wrap:wrap}
+.strip a{color:#fff;text-decoration:none;opacity:.9}
+.strip a:hover{text-decoration:underline}
+.strip nav{display:flex;gap:20px;flex-wrap:wrap}
 
-/* hero */
-.hero{background:var(--road);color:var(--road-ink)}
-.hero .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center;padding-block:56px 64px}
-.hero .eyebrow{color:var(--signal)}
-.hero h1{font-size:clamp(2.6rem,7vw,4.6rem);font-weight:800;text-transform:uppercase;margin-top:14px}
-.hero p.lede{margin-top:18px;max-width:58ch;font-size:1.08rem;opacity:.9}
-.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-.btn{display:inline-block;padding:12px 20px;font-weight:600;text-decoration:none;border:2px solid var(--signal);font-size:.95rem}
-.btn.primary{background:var(--signal);color:var(--signal-ink)}
-.btn.ghost{color:var(--road-ink)}
-.radar{width:100%;max-width:300px;aspect-ratio:1;justify-self:center;position:relative}
-.radar svg{width:100%;height:100%;display:block}
-.sweep{transform-origin:150px 150px;animation:spin 6s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-@media (prefers-reduced-motion: reduce){.sweep{animation:none}}
+.mast{background:var(--panel)}
+.mast .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:22px;flex-wrap:wrap}
+.mark{display:flex;align-items:center;gap:16px;text-decoration:none;color:var(--ink)}
+.badge{width:76px;height:76px;flex:none;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;
+  font:700 1.05rem/1 var(--cond);text-align:center;letter-spacing:.02em;border:4px solid var(--blue)}
+.badge small{display:block;font-size:.62rem;letter-spacing:.14em;margin-top:3px;color:#9fd0f0}
+.mark h1{font:700 clamp(1.25rem,2.6vw,1.75rem)/1.15 var(--cond)}
+.mark p{font-size:.92rem;color:var(--muted);margin-top:2px}
+.code{font:600 .8rem/1 var(--sans);color:var(--muted);border:1px solid var(--line);padding:8px 12px;background:var(--bg);letter-spacing:.04em}
 
-/* sections */
-section{padding-block:64px}
-.head{display:flex;flex-direction:column;gap:10px;margin-bottom:32px}
-.about{display:grid;grid-template-columns:1.2fr .8fr;gap:40px}
-.about p+p{margin-top:14px}
-.about .copy{max-width:62ch}
-.facts{background:var(--surface);border:1px solid var(--line);align-self:start}
-.facts div{display:flex;justify-content:space-between;gap:16px;padding:12px 18px;border-bottom:1px solid var(--line);font-size:.95rem}
-.facts div:last-child{border-bottom:0}
-.facts dt{color:var(--muted)}
-.facts dd{margin:0;font-family:var(--mono);font-size:.88rem;text-align:right}
+.menu{background:var(--nav);border-bottom:4px solid var(--red);position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--nav)}
+.menu ul{list-style:none;margin:0 auto;padding:0;display:flex;gap:4px 28px;flex-wrap:wrap}
+.menu a{display:block;color:var(--on-dark);text-decoration:none;font-weight:700;padding-block:14px;font-size:1rem}
+.menu a:hover{text-decoration:underline;text-underline-offset:6px}
 
-.focus{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:2px solid var(--ink)}
-.focus article{padding:22px 20px 24px 0;border-right:1px solid var(--line);margin-right:20px;min-width:0}
-.focus article:last-child{border-right:0;margin-right:0}
-.focus .tag{font-family:var(--mono);font-size:.78rem;color:var(--muted)}
-.focus h3{margin:8px 0 8px}
-.focus p{font-size:.95rem;color:var(--muted)}
+.banner{position:relative;overflow:hidden;min-height:250px;display:grid;align-items:center;
+  background:
+    repeating-linear-gradient(172deg,transparent 0 22px,rgba(255,170,60,.55) 22px 24px,transparent 24px 60px),
+    repeating-linear-gradient(176deg,transparent 0 34px,rgba(120,200,255,.5) 34px 36px,transparent 36px 80px),
+    radial-gradient(120% 90% at 50% 120%,#E9862A 0%,#7A3C2B 28%,transparent 60%),
+    linear-gradient(180deg,#0A1B33 0%,#173A63 55%,#2C2A3D 100%)}
+.banner::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.35))}
+.banner .wrap{position:relative;z-index:1;width:100%}
+.plate{background:rgba(10,12,16,.72);border-radius:8px;padding:30px 24px;text-align:center;color:#fff}
+.plate h2{font:800 clamp(1.9rem,5vw,3.2rem)/1.1 var(--sans)}
+.crumbs{margin-top:10px;font-size:1rem}
+.crumbs a{color:#fff;text-decoration:none}
+.crumbs a:hover{text-decoration:underline}
 
-.event{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.event-card{display:grid;grid-template-columns:200px 1fr;gap:32px;align-items:start}
-.when{background:var(--road);color:var(--road-ink);padding:22px;text-align:center}
-.when .m{font-family:var(--display);font-size:2.4rem;font-weight:800;line-height:1;text-transform:uppercase}
-.when .y{font-family:var(--mono);color:var(--signal);margin-top:6px}
-.when .s{font-size:.8rem;opacity:.8;margin-top:10px}
-.event h3{font-size:clamp(1.5rem,3.2vw,2rem)}
-.event .meta{margin-top:10px;color:var(--muted);font-size:.95rem}
-.event ul{margin:16px 0 0;padding-left:20px}
-.event li+li{margin-top:6px}
+.page{display:grid;grid-template-columns:330px 1fr;gap:40px;padding-block:44px 64px;align-items:start}
+.side{background:var(--panel);padding:18px 18px 28px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 70px)}
+.side h3{background:var(--navy);color:#fff;font:600 1.35rem/1.2 var(--sans);padding:14px 18px}
+.side ul{list-style:none;margin:18px 0 26px;padding:0 6px;display:grid;gap:8px}
+.side li a{text-decoration:none;font-weight:600;display:flex;gap:10px}
+.side li a::before{content:"•";color:var(--link)}
+.side li a:hover{text-decoration:underline}
+.pill{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--red);color:#fff;text-decoration:none;font-weight:700;border-radius:999px;padding:13px 18px;font-size:.98rem}
+.pill:hover{filter:brightness(1.08)}
 
-.team{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.person{background:var(--surface);border:1px solid var(--line);padding:18px 20px;display:flex;flex-direction:column;gap:4px}
-.person .role{font-family:var(--mono);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.person .name{font-weight:600;font-size:1.05rem}
-.person.lead{border-top:4px solid var(--signal)}
-.term{margin-top:16px;font-size:.88rem;color:var(--muted)}
+main{min-width:0}
+.sec{scroll-margin-top:90px}
+.sec+.sec{margin-top:56px}
+.sec h2{color:var(--head);font:700 clamp(1.6rem,3.2vw,2.2rem)/1.2 var(--sans);padding-bottom:12px;border-bottom:1px solid var(--red);margin-bottom:26px}
+.intro{display:grid;grid-template-columns:1fr 340px;gap:32px;align-items:start}
+.intro .copy{max-width:62ch;display:grid;gap:16px;min-width:0}
+.chair{border:3px solid var(--blue);border-radius:6px;padding:16px 20px;display:grid;gap:6px;font-size:1rem}
 
-.join{background:var(--road);color:var(--road-ink)}
-.join .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
-.join .eyebrow{color:var(--signal)}
-.join ol{margin:0;padding-left:20px}
-.join li+li{margin-top:10px}
-.join a{color:var(--signal)}
+table{border-collapse:collapse;width:100%;font-size:.97rem}
+.tbl{overflow-x:auto}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--navy);color:#fff;font-weight:600}
+tbody tr:nth-child(even) td{background:var(--panel)}
 
-.contact{display:grid;grid-template-columns:1fr 1fr;gap:40px}
-.addr{font-style:normal;line-height:1.7}
-.copyrow{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:6px}
-.mail{font-family:var(--mono);font-size:.92rem;user-select:all;word-break:break-all}
-.copy{background:transparent;border:1px solid var(--line);color:var(--ink);padding:6px 10px;font:500 .8rem var(--body);cursor:pointer}
-.links{list-style:none;margin:0;padding:0}
-.links li{border-bottom:1px solid var(--line)}
-.links a{display:flex;justify-content:space-between;padding:12px 0;text-decoration:none}
-.links a:hover{color:var(--road)}
-:root[data-theme="dark"] .links a:hover{color:var(--signal)}
-.links a::after{content:"↗";color:var(--muted)}
+.act{border-left:5px solid var(--blue);background:var(--panel);padding:20px 22px;display:grid;gap:10px}
+.act .when{font-weight:700;color:var(--red);font-size:.9rem;letter-spacing:.04em;text-transform:uppercase}
+.act h3{font-size:1.3rem}
+.act ul{margin:4px 0 0;padding-left:20px}
+.act .meta{color:var(--muted);font-size:.95rem}
 
-footer{padding-block:28px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
-footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.news{list-style:none;margin:0;padding:0;display:grid}
+.news li{display:grid;grid-template-columns:130px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.news time{font-weight:700;color:var(--muted);font-size:.92rem;font-variant-numeric:tabular-nums}
 
-@media (max-width:860px){
-  .hero .wrap,.about,.join .wrap,.contact,.event-card{grid-template-columns:1fr}
-  .radar{max-width:220px}
-  .focus{grid-template-columns:1fr 1fr}
-  .focus article{border-right:0;margin-right:0;padding-right:16px;border-bottom:1px solid var(--line)}
-  .team{grid-template-columns:1fr 1fr}
-  .when{display:flex;gap:14px;align-items:baseline;text-align:left;flex-wrap:wrap}
-  .nav ul{gap:14px}
+.join ol{margin:0;padding-left:22px;display:grid;gap:8px}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.contact address{font-style:normal}
+.mail{font-weight:600;user-select:all;word-break:break-all}
+.copy-btn{margin-left:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:600 .8rem var(--sans);padding:4px 10px;cursor:pointer}
+
+footer{background:var(--navy);color:#fff;font-size:.88rem}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:22px}
+footer a{color:#fff}
+
+@media (max-width:980px){
+  .page{grid-template-columns:1fr}
+  .side{position:static}
+  .intro{grid-template-columns:1fr}
 }
-@media (max-width:480px){.focus,.team{grid-template-columns:1fr}}
+@media (max-width:600px){
+  .contact{grid-template-columns:1fr}
+  .news li{grid-template-columns:1fr;gap:2px}
+  .menu ul{gap:0 18px}
+  .menu a{padding-block:10px;font-size:.95rem}
+  .banner{min-height:190px}
+}
 </style>
 </head>
 <body>
 
-<header class="band">
-  <nav class="wrap nav" aria-label="Main">
-    <a class="brand" href="#top">IEEE ITSS <span>KLEF</span></a>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#events">Events</a></li>
-      <li><a href="#team">Team</a></li>
-      <li><a href="#join">Join</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+<div class="strip band">
+  <div class="wrap">
+    <nav aria-label="IEEE links">
+      <a href="https://www.ieee.org/" target="_blank" rel="noopener">IEEE.org</a>
+      <a href="https://ieeexplore.ieee.org/" target="_blank" rel="noopener">IEEE Xplore</a>
+      <a href="https://ieee-itss.org/" target="_blank" rel="noopener">IEEE ITSS</a>
+      <a href="https://ieee-itss.org/chapters/" target="_blank" rel="noopener">ITSS Chapters</a>
+    </nav>
+    <span>IEEE Hyderabad Section · Region 10</span>
+  </div>
+</div>
 
-<main id="top">
-  <div class="hero band">
-    <div class="wrap">
-      <div>
-        <p class="eyebrow">Student Branch Chapter · SBC62881S</p>
-        <h1>Intelligent Transportation Systems at KLEF</h1>
-        <p class="lede">The IEEE Intelligent Transportation Systems Society Student Branch Chapter at Koneru Lakshmaiah Education Foundation brings students together to learn, build and research the technology behind safer, smarter mobility.</p>
-        <div class="cta">
-          <a class="btn primary" href="#join">Join the chapter</a>
-          <a class="btn ghost" href="#events">Upcoming events</a>
-        </div>
-      </div>
-      <div class="radar" aria-hidden="true">
-        <svg viewBox="0 0 300 300">
-          <defs>
-            <radialGradient id="g" cx="50%" cy="50%" r="50%">
-              <stop offset="0" stop-color="#E8A317" stop-opacity=".35"/>
-              <stop offset="1" stop-color="#E8A317" stop-opacity="0"/>
-            </radialGradient>
-          </defs>
-          <g fill="none" stroke="currentColor" stroke-opacity=".28">
-            <circle cx="150" cy="150" r="140"/><circle cx="150" cy="150" r="100"/><circle cx="150" cy="150" r="60"/><circle cx="150" cy="150" r="20"/>
-            <line x1="10" y1="150" x2="290" y2="150"/><line x1="150" y1="10" x2="150" y2="290"/>
-          </g>
-          <path class="sweep" d="M150 150 L150 10 A140 140 0 0 1 271 80 Z" fill="url(#g)"/>
-          <g fill="#E8A317">
-            <rect x="196" y="92" width="10" height="16" rx="2"/>
-            <rect x="96" y="70" width="10" height="16" rx="2" opacity=".7"/>
-            <rect x="210" y="196" width="10" height="16" rx="2" opacity=".55"/>
-          </g>
-          <rect x="144" y="140" width="12" height="20" rx="2" fill="currentColor"/>
-        </svg>
-      </div>
+<div class="mast band">
+  <div class="wrap">
+    <a class="mark" href="#top">
+      <span class="badge" aria-hidden="true"><span>KLEF<small>ITSS SBC</small></span></span>
+      <span>
+        <h1>IEEE ITSS Student Branch Chapter</h1>
+        <p>Koneru Lakshmaiah Education Foundation (KLEF), Vaddeswaram</p>
+      </span>
+    </a>
+    <span class="code">Chapter code SBC62881S</span>
+  </div>
+</div>
+
+<nav class="menu band" aria-label="Main">
+  <ul class="wrap">
+    <li><a href="#description">About</a></li>
+    <li><a href="#officers">Officers</a></li>
+    <li><a href="#activities">Activities</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#join">Membership</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="banner band" id="top">
+  <div class="wrap">
+    <div class="plate">
+      <h2>KLEF Student Branch Chapter</h2>
+      <p class="crumbs"><a href="https://ieee-itss.org/chapters/" target="_blank" rel="noopener">ITSS Chapters</a> » Student Branch Chapters » KLEF</p>
     </div>
   </div>
-  <div class="lane" role="presentation"></div>
+</div>
 
-  <section id="about" class="band">
-    <div class="wrap about">
-      <div class="copy">
-        <div class="head"><p class="eyebrow">About us</p><h2>Who we are</h2></div>
-        <p>We are a student chapter of the IEEE Intelligent Transportation Systems Society (ITSS), the IEEE community that applies electrical engineering and information technology to transportation.</p>
-        <p>Our members explore how vehicles sense the road, how traffic systems communicate, and how data and AI can reduce road accidents and congestion. We organise expert talks, hands-on workshops and student projects, and connect KLEF students with the global ITSS research community.</p>
-      </div>
-      <dl class="facts" aria-label="Chapter details">
-        <div><dt>Chapter code</dt><dd>SBC62881S</dd></div>
-        <div><dt>Student Branch</dt><dd>STB62881</dd></div>
-        <div><dt>IEEE Section</dt><dd>Hyderabad</dd></div>
-        <div><dt>IEEE Region</dt><dd>Region 10</dd></div>
-        <div><dt>Society</dt><dd>IEEE ITSS</dd></div>
-        <div><dt>Officer term</dt><dd>Jul 2026 – Jul 2028</dd></div>
-      </dl>
-    </div>
-  </section>
+<div class="band">
+  <div class="wrap page">
+    <aside class="side" aria-label="On this page">
+      <h3>On This Page</h3>
+      <ul>
+        <li><a href="#description">Short Description</a></li>
+        <li><a href="#officers">Chapter Officers</a></li>
+        <li><a href="#activities">Chapter Activities</a></li>
+        <li><a href="#news">Chapter News</a></li>
+        <li><a href="#join">Join ITSS</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a class="pill" href="https://ieee-itss.org/chapters/" target="_blank" rel="noopener">« ITSS Chapters Overview</a>
+    </aside>
 
-  <section class="band" aria-labelledby="focus-h">
-    <div class="wrap">
-      <div class="head"><p class="eyebrow">What we work on</p><h2 id="focus-h">Focus areas</h2></div>
-      <div class="focus">
-        <article><p class="tag">Sensing</p><h3>Automotive radar</h3><p>FMCW and 4D imaging radar, and how vehicles measure range and speed in rain, fog and darkness.</p></article>
-        <article><p class="tag">Perception</p><h3>Sensor fusion</h3><p>Combining radar, camera and LiDAR so autonomous vehicles understand the road around them.</p></article>
-        <article><p class="tag">Control</p><h3>Driver assistance</h3><p>Adaptive cruise control, emergency braking and the control systems behind safer driving.</p></article>
-        <article><p class="tag">Systems</p><h3>Connected mobility</h3><p>V2X communication, smart traffic management and AI for safer Indian roads.</p></article>
-      </div>
-    </div>
-  </section>
+    <main>
+      <section class="sec" id="description">
+        <h2>Short Description</h2>
+        <div class="intro">
+          <div class="copy">
+            <p>In line with the mission of the IEEE Intelligent Transportation Systems Society (ITSS), the Student Branch Chapter at Koneru Lakshmaiah Education Foundation (KLEF) brings together students and faculty who share an interest in intelligent transportation.</p>
+            <p>The chapter organises expert talks, hands-on workshops and student projects on automotive radar, sensor fusion, driver assistance, connected vehicles and AI for safer roads, and connects KLEF students with the global ITSS research community.</p>
+          </div>
+          <div class="chair">
+            <div><b>Chapter Chair</b>: Venkata Karunakar Banka</div>
+            <div><b>Faculty Advisor</b>: Dr. M. Siva Ganga Prasad</div>
+            <div><b>Section</b>: IEEE Hyderabad Section, Region 10</div>
+            <div><b>Student Branch</b>: STB62881</div>
+          </div>
+        </div>
+      </section>
 
-  <section id="events" class="band event">
-    <div class="wrap">
-      <div class="head"><p class="eyebrow">Upcoming</p><h2>Events</h2></div>
-      <div class="event-card">
-        <div class="when"><div class="m">Early</div><div class="y">2027</div><div class="s">Date to be announced</div></div>
-        <div>
-          <p class="eyebrow">Inaugural workshop · Hybrid</p>
+      <section class="sec" id="officers">
+        <h2>Chapter Officers</h2>
+        <div class="tbl">
+          <table>
+            <thead><tr><th>Position</th><th>Name</th></tr></thead>
+            <tbody>
+              <tr><td>Faculty Advisor</td><td>Dr. M. Siva Ganga Prasad</td></tr>
+              <tr><td>Chair</td><td>Venkata Karunakar Banka</td></tr>
+              <tr><td>Vice Chair</td><td>Pavan Kumar Reddy Bodam</td></tr>
+              <tr><td>Secretary</td><td>Poojitha Banka</td></tr>
+              <tr><td>Treasurer</td><td>Harika Chitrala</td></tr>
+              <tr><td>Webmaster</td><td>Harshavardhan Kammari</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin-top:12px;color:var(--muted);font-size:.92rem">Officer term: 11 July 2026 – 11 July 2028.</p>
+      </section>
+
+      <section class="sec" id="activities">
+        <h2>Chapter Activities</h2>
+        <article class="act">
+          <p class="when">Upcoming · Early 2027 · Date to be announced</p>
           <h3>Beyond Vision: 4D Radar and Sensor Fusion for Safe Autonomous Driving and Intelligent Transportation Systems</h3>
-          <p class="meta">KLEF, Vaddeswaram, Andhra Pradesh · On campus and streamed online</p>
+          <p class="meta">Inaugural IEEE ITSS workshop · Hybrid · KLEF, Vaddeswaram, Andhra Pradesh</p>
           <ul>
             <li>IEEE ITSS Distinguished Lectures (speakers to be announced)</li>
             <li>Expert talk on automotive and 4D imaging radar</li>
             <li>Hands-on lab: radar–camera fusion on real self-driving data and an adaptive cruise control simulation</li>
             <li>Student poster session and formal inauguration of the chapter</li>
           </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+        </article>
+      </section>
 
-  <section id="team" class="band">
-    <div class="wrap">
-      <div class="head"><p class="eyebrow">Chapter officers</p><h2>Our team</h2></div>
-      <div class="team">
-        <div class="person lead"><span class="role">Faculty Advisor</span><span class="name">Dr. M. Siva Ganga Prasad</span></div>
-        <div class="person lead"><span class="role">Chair</span><span class="name">Venkata Karunakar Banka</span></div>
-        <div class="person"><span class="role">Vice Chair</span><span class="name">Pavan Kumar Reddy Bodam</span></div>
-        <div class="person"><span class="role">Secretary</span><span class="name">Poojitha Banka</span></div>
-        <div class="person"><span class="role">Treasurer</span><span class="name">Harika Chitrala</span></div>
-        <div class="person"><span class="role">Webmaster</span><span class="name">Harshavardhan Kammari</span></div>
-      </div>
-      <p class="term">Officers registered with IEEE for the term 11 July 2026 – 11 July 2028.</p>
-    </div>
-  </section>
-
-  <div class="lane" role="presentation"></div>
-  <section id="join" class="band join">
-    <div class="wrap">
-      <div>
-        <p class="eyebrow">Membership</p>
-        <h2 style="margin-top:10px">Join IEEE ITSS</h2>
-        <p style="margin-top:16px;max-width:52ch">Any KLEF student can join. As an ITSS member you get access to the Society's journals, conferences, Distinguished Lecturer talks and a global network of transportation researchers.</p>
-      </div>
-      <ol>
-        <li>Become an IEEE Student Member at <a href="https://www.ieee.org/membership/join" target="_blank" rel="noopener">ieee.org/membership/join</a>.</li>
-        <li>Add the Intelligent Transportation Systems Society to your membership.</li>
-        <li>Contact the chapter to take part in our events and projects.</li>
-      </ol>
-    </div>
-  </section>
-
-  <section id="contact" class="band">
-    <div class="wrap contact">
-      <div>
-        <div class="head"><p class="eyebrow">Contact</p><h2>Get in touch</h2></div>
-        <address class="addr">IEEE ITSS Student Branch Chapter<br>Koneru Lakshmaiah Education Foundation<br>Green Fields, Vaddeswaram, Guntur District<br>Andhra Pradesh 522302, India</address>
-        <p style="margin-top:14px">Faculty Advisor, Dr. M. Siva Ganga Prasad</p>
-        <div class="copyrow"><span class="mail" id="mail">msivagangaprasad@kluniversity.in</span><button class="copy" id="copybtn" type="button">Copy</button></div>
-      </div>
-      <div>
-        <div class="head"><p class="eyebrow">Links</p><h2>Resources</h2></div>
-        <ul class="links">
-          <li><a href="https://ieee-itss.org/" target="_blank" rel="noopener">IEEE ITS Society</a></li>
-          <li><a href="https://ieee-itss.org/chapters/" target="_blank" rel="noopener">ITSS Chapters</a></li>
-          <li><a href="https://ieee-itss.org/educational-activities/distinguished-lecturer-program/" target="_blank" rel="noopener">Distinguished Lecturer Program</a></li>
-          <li><a href="https://www.kluniversity.in/" target="_blank" rel="noopener">KL University</a></li>
+      <section class="sec" id="news">
+        <h2>Chapter News</h2>
+        <ul class="news">
+          <li><time>Jul 2026</time><span>IEEE ITSS Student Branch Chapter established at KLEF (SBC62881S), with six founding members.</span></li>
+          <li><time>Jul 2026</time><span>First chapter officers registered with IEEE for the 2026–2028 term.</span></li>
         </ul>
-      </div>
-    </div>
-  </section>
-</main>
+      </section>
+
+      <section class="sec join" id="join">
+        <h2>Join ITSS</h2>
+        <ol>
+          <li>Become an IEEE Student Member at <a href="https://www.ieee.org/membership/join" target="_blank" rel="noopener">ieee.org/membership/join</a>.</li>
+          <li>Add the Intelligent Transportation Systems Society to your membership.</li>
+          <li>Contact the chapter to take part in our events and projects.</li>
+        </ol>
+      </section>
+
+      <section class="sec" id="contact">
+        <h2>Contact</h2>
+        <div class="contact">
+          <address>IEEE ITSS Student Branch Chapter<br>Koneru Lakshmaiah Education Foundation<br>Green Fields, Vaddeswaram, Guntur District<br>Andhra Pradesh 522302, India</address>
+          <div>
+            <p>Faculty Advisor, Dr. M. Siva Ganga Prasad</p>
+            <p><span class="mail" id="mail">msivagangaprasad@kluniversity.in</span><button class="copy-btn" id="copybtn" type="button">Copy</button></p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
 
 <footer class="band">
   <div class="wrap">
     <span>© 2026 IEEE ITSS Student Branch Chapter, KLEF</span>
-    <span>IEEE Hyderabad Section · Region 10</span>
+    <a href="https://ieee-itss.org/" target="_blank" rel="noopener">IEEE Intelligent Transportation Systems Society</a>
   </div>
 </footer>
 
 <script>
 document.getElementById('copybtn').addEventListener('click',function(){
-  var b=this,t=document.getElementById('mail').textContent;
-  function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('mail'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected';}
-  try{navigator.clipboard.writeText(t).then(function(){b.textContent='Copied';},sel);}catch(e){sel();}
+  var b=this,el=document.getElementById('mail');
+  function sel(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected';}
+  try{navigator.clipboard.writeText(el.textContent).then(function(){b.textContent='Copied';},sel);}catch(e){sel();}
   setTimeout(function(){b.textContent='Copy';},2000);
 });
 </script>
